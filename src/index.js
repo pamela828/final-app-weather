@@ -43,6 +43,9 @@ dateElement.innerHTML = formatDate(response.data.dt * 1000);
 let iconElement = document.querySelector("#icon");
 iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", response.data.weather[0].icon)
+
+celsiusTemperature = response.data.main.temp;
+
 }
 
 function search(city) {
@@ -58,7 +61,35 @@ function handleSubmit(event) {
     search(cityInputElement.value);
 }
 
+function showFahrenheitTemperature(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+    //celsius remove active
+    celsiusLink.classList.remove("active");
+    //fahrenheit add active
+    fahrenheitLink.classList.add("active");
+}
+
+function showCelsiusTemperature(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
+    //add active celsius
+    celsiusLink.classList.add("active");
+    //remove active fahrenheit
+    fahrenheitLink.classList.remove("active");
+}
 search("Mexico city");
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
