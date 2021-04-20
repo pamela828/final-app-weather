@@ -81,7 +81,7 @@ function showCelsiusTemperature(event) {
     //remove active fahrenheit
     fahrenheitLink.classList.remove("active");
 }
-search("Mexico city");
+search("New York");
 
 let celsiusTemperature = null;
 
@@ -93,3 +93,4 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
+

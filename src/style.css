@@ -60,6 +60,9 @@ li {
   line-height: 1;
   color: #497b97;
 }
+.col-6 {
+  padding: 0;
+}
 
 .weather-temperature .units {
   position: relative;
@@ -75,4 +78,24 @@ li {
 
 .weather-temperature .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  line-height: 30px;
+  display: table-row;
+}
+
+.weather-forecast-day-one {
+  max-width: none;
+  padding: 0;
+}
+
+.weather-forecast-date {
+  display: block;
+  margin: 0 auto;
+}
+
+.weather-forecast-temperature {
+  display: block;
+  margin: 0 auto;
 }
