@@ -29,7 +29,7 @@ ul {
   margin: 0;
 }
 
-li {
+.properties {
   list-style: none;
   color: #938e95;
   font-size: 20px;
@@ -83,6 +83,13 @@ li {
 .weather-forecast {
   line-height: 30px;
   display: table-row;
+  color: #84c5bf;
+  list-style: none;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .weather-forecast-day-one {
@@ -90,12 +97,16 @@ li {
   padding: 0;
 }
 
-.weather-forecast-date {
-  display: block;
-  margin: 0 auto;
-}
-
 .weather-forecast-temperature {
   display: block;
   margin: 0 auto;
+  color: #adadad;
+}
+
+.weather-forecast-date {
+  color: #84c5bf;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.7;
 }
