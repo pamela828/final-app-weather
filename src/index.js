@@ -1,3 +1,4 @@
+//Date and time of current weather
 function formatDate(timestamp) {
 let date = new Date(timestamp);
 let hours = date.getHours();
@@ -22,7 +23,7 @@ let days = [
 let day = days[date.getDay()];
 return `${day} ${hours}:${minutes}`;
 }
-
+//FORECAST coordinates to get information
 function getForecast(coordinates) {
     console.log(coordinates);
     let apiKey = "bded79ed1d2cea9265b0acc8da5369f4";
@@ -31,7 +32,7 @@ function getForecast(coordinates) {
     axios.get(apiUrl).then(displayForecast);
 }
 
-
+//CURRENT & FORECAST temperature
 function displayTemperature(response) {
 let temperatureElement = document.querySelector("#temperature");
 let cityElement = document.querySelector("#city")
@@ -55,7 +56,7 @@ celsiusTemperature = response.data.main.temp;
 getForecast(response.data.coord)
 }
 
-
+//API to search city
 function search(city) {
 let apiKey = "bded79ed1d2cea9265b0acc8da5369f4";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -63,12 +64,14 @@ axios.get(apiUrl).then(displayTemperature);
 
 }
 
+//Value of submitted city by the user
 function handleSubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
     search(cityInputElement.value);
 }
 
+//Current Fahrenheit
 function showFahrenheitTemperature(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
@@ -80,6 +83,7 @@ function showFahrenheitTemperature(event) {
     fahrenheitLink.classList.add("active");
 }
 
+//Current Celsius
 function showCelsiusTemperature(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
@@ -90,6 +94,7 @@ function showCelsiusTemperature(event) {
     fahrenheitLink.classList.remove("active");
 }
 
+//FORECAST days
 function formatDay(timestamp) {
 let date = new Date(timestamp * 1000);
 let day = date.getDay();
@@ -98,6 +103,7 @@ let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 return days[day];
 }
 
+//FORECAST structure
 function displayForecast(response) {
     let forecast  = response.data.daily;
     let forecastElement = document.querySelector("#forecast");
