@@ -3,30 +3,41 @@ body {
 }
 
 h1 {
-  color: #497b97;
-  font-size: 50px;
-  line-height: 55px;
+  color: #3d5a80;
+  font-size: 60px;
+  line-height: 63px;
   font-weight: 400;
   margin: 0;
+  padding: 0 0 10px;
+  text-align: center;
 }
 
 h3 {
-  color: #7395af;
+  color: #6d8fa8;
   font-size: 32px;
   line-height: 35px;
   font-weight: 100;
   margin: 0;
+  text-align: center;
   text-transform: capitalize;
+}
+
+em {
+  font-style: normal;
+  color: #ee6c4d;
+  padding: 7px;
 }
 
 h4 {
   text-transform: capitalize;
-  color: #7395af;
+  color: #8dacc4;
+  text-align: center;
 }
 
-ul {
-  padding: 0;
+li {
+  padding: 10px 0 10px 20px;
   margin: 0;
+  font-size: 30px;
 }
 
 .properties {
@@ -51,23 +62,29 @@ ul {
 }
 
 .location {
-  padding: 10px 20px;
+  padding: 20px 20px 10px 20px;
+}
+
+.col-9 {
+  padding: 10px 15px;
+}
+
+.col-3 {
+  padding: 10px 5px;
 }
 
 .weather-temperature strong {
-  font-size: 50px;
+  font-size: 70px;
   font-weight: 100;
-  line-height: 1;
-  color: #497b97;
-}
-.col-6 {
-  padding: 0;
+  line-height: 1.5;
+  color: #3d5a80;
+  padding: 0 0 0 40px;
 }
 
 .weather-temperature .units {
   position: relative;
   font-size: 15px;
-  top: -23px;
+  top: -40px;
 }
 
 .weather-temperature .active {
@@ -109,4 +126,17 @@ ul {
 
 .weather-forecast-temperature-min {
   opacity: 0.7;
+}
+
+#date {
+  font-weight: 600;
+  padding: 0 0 5px 7px;
+}
+
+#humidity {
+  font-weight: bold;
+}
+
+#wind {
+  font-weight: bold;
 }
